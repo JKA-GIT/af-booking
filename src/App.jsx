@@ -223,9 +223,9 @@ const css = `
 
   /* WEEK NAVIGATION */
   .week-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
-  .week-label{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--text);}
+  .week-label{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--text);}
   .week-btns{display:flex;gap:8px;}
-  .week-btn{padding:8px 18px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;
+  .week-btn{padding:10px 22px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;
     letter-spacing:2px;text-transform:uppercase;border:2px solid var(--border);background:var(--surface);
     color:var(--muted);cursor:pointer;border-radius:6px;transition:all .15s;}
   .week-btn:hover{border-color:var(--purple);color:var(--purple);}
@@ -233,34 +233,34 @@ const css = `
 
   /* WEEKLY CALENDAR */
   .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;overflow-x:auto;}
-  .day-col{min-width:120px;}
-  .day-header{text-align:center;padding:12px 8px;background:var(--purple);border-radius:10px 10px 0 0;margin-bottom:8px;}
+  .day-col{min-width:140px;}
+  .day-header{text-align:center;padding:16px 8px;background:var(--purple);border-radius:10px 10px 0 0;margin-bottom:8px;}
   .day-header.today-col{background:var(--purple-dark);}
-  .day-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;
-    letter-spacing:2px;color:#fff;text-transform:uppercase;line-height:1;}
-  .day-date{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;
-    color:rgba(255,255,255,.8);letter-spacing:1px;margin-top:2px;}
-  .day-slots{display:flex;flex-direction:column;gap:6px;}
+  .day-name{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;
+    letter-spacing:3px;color:#fff;text-transform:uppercase;line-height:1;}
+  .day-date{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
+    color:rgba(255,255,255,.9);letter-spacing:1px;margin-top:4px;}
+  .day-slots{display:flex;flex-direction:column;gap:8px;}
 
   /* SLOT PILL */
-  .slot-pill{padding:10px 12px;border-radius:8px;border:2px solid var(--border);background:var(--surface);
+  .slot-pill{padding:14px 14px;border-radius:10px;border:2px solid var(--border);background:var(--surface);
     cursor:pointer;transition:all .15s;position:relative;}
-  .slot-pill:hover{border-color:var(--purple);box-shadow:0 2px 10px rgba(124,58,237,.15);transform:translateY(-1px);}
+  .slot-pill.available-slot{background:#dcfce7;border-color:#16a34a;}
+  .slot-pill.available-slot:hover{background:#bbf7d0;border-color:#15803d;box-shadow:0 3px 12px rgba(22,163,74,.2);transform:translateY(-1px);}
   .slot-pill.booked{background:var(--purple-light);border-color:var(--border2);cursor:default;}
   .slot-pill.booked:hover{transform:none;box-shadow:none;}
-  .slot-pill.unavailable{opacity:.3;cursor:not-allowed;}
+  .slot-pill.unavailable{opacity:.3;cursor:not-allowed;background:#f9fafb;}
   .slot-pill.unavailable:hover{transform:none;box-shadow:none;border-color:var(--border);}
-  .slot-pill.trainer-off{background:#f9fafb;border-color:#e5e7eb;cursor:default;}
-  .pill-time{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;
+  .pill-time{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;
     color:var(--text);letter-spacing:-0.5px;line-height:1;}
-  .pill-status{font-size:11px;font-weight:700;letter-spacing:1.5px;font-family:'Barlow Condensed',sans-serif;
-    text-transform:uppercase;margin-top:2px;}
-  .pill-status.open{color:var(--success);}
+  .pill-status{font-size:14px;font-weight:700;letter-spacing:1.5px;font-family:'Barlow Condensed',sans-serif;
+    text-transform:uppercase;margin-top:4px;}
+  .pill-status.open{color:#16a34a;}
   .pill-status.booked{color:var(--purple);}
   .pill-status.off{color:var(--muted2);}
-  .pill-client{font-size:12px;color:var(--purple-dark,#5B21B6);font-weight:600;margin-top:4px;
+  .pill-client{font-size:15px;color:var(--purple-dark,#5B21B6);font-weight:700;margin-top:6px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .pill-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .pill-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center;}
 
   /* TOGGLE SWITCH */
   .slot-toggle{width:34px;height:18px;border-radius:9px;border:none;cursor:pointer;
@@ -290,7 +290,8 @@ const css = `
   .btn-ghost:hover{color:var(--text);border-color:var(--muted2);}
   .btn-danger{background:transparent;color:var(--danger);border-color:var(--danger);}
   .btn-danger:hover{background:var(--danger);color:#fff;}
-  .btn-sm{flex:none;padding:5px 12px;font-size:12px;letter-spacing:1px;border-radius:5px;}
+  .btn-sm{flex:none;padding:8px 16px;font-size:15px;letter-spacing:1px;border-radius:5px;}
+  .no-slots-day{text-align:center;padding:18px 8px;color:var(--muted2);font-size:15px;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
 
   /* CONFIRM SCREEN */
   .confirm-screen{text-align:center;padding:10px 0;}
@@ -339,7 +340,6 @@ const css = `
   .sync-dot.show{opacity:1;animation:pulse 1.5s ease-out;}
   @keyframes pulse{0%{opacity:1;transform:scale(1);}100%{opacity:0;transform:scale(2.5);}}
   .error-banner{background:#FEF2F2;border:2px solid #FECACA;border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:15px;color:#dc2626;font-family:'Barlow Condensed',sans-serif;font-weight:700;}
-  .no-slots-day{text-align:center;padding:16px 8px;color:var(--muted2);font-size:12px;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
 `;
 
 // ── WEEKLY CALENDAR ───────────────────────────────────────────────────────────
@@ -377,7 +377,7 @@ function WeekCalendar({ weekDates, slots, bookings, trainerMode, onSlotClick, on
                     const isBooked = !!booking;
                     return (
                       <div key={slot.id}
-                        className={`slot-pill ${isBooked?"booked":!slot.available?"unavailable":""}`}
+                        className={`slot-pill ${isBooked?"booked":!slot.available?"unavailable":(!trainerMode&&slot.available)?"available-slot":""}`}
                         onClick={() => !trainerMode && !isBooked && slot.available && onSlotClick(slot)}>
 
                         <div className="pill-time">{slot.time}</div>
